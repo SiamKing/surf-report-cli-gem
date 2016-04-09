@@ -19,7 +19,7 @@ class SurfReport::CLI
 
   def list_surf_reports
     puts "\n"
-    puts "3 Day Surf Report for Los Angeles:".colorize(:black)
+    puts "******".colorize(:blue) + "3 Day Surf Report for Los Angeles".colorize(:black) + "******".colorize(:blue)
     puts "\n"
     @days = SurfReport::Report.all
     @days.each.with_index(1) do |day, i|
@@ -31,7 +31,7 @@ class SurfReport::CLI
     input = nil
     while input != "exit"
       puts "\n"
-      puts "Enter the number of the day you would like to see a detailed report for or type 'list' to see days again or 'exit' to get outta here!"
+      puts "What number would you like to see a detailed report for? Oh yeah...you can type 'list' to see days again or 'exit' to get outta here!"
       input = gets.strip.downcase
 
       if input.to_i > 0
@@ -49,13 +49,13 @@ class SurfReport::CLI
         break
       else
         puts "\n"
-        puts "Not sure what you want. Type list, number or exit."
+        puts "Not sure what you're getting at man. Maybe you should slow down a little. Take a breath and type 'list', number or 'exit'."
       end
     end
 
   end
 
   def goodbye
-    puts "Hope the waves are swell;)"
+    puts "Later brah! Hope the waves are swell;)"
   end
 end
