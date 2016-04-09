@@ -17,5 +17,6 @@ Which day would you like to know more about?
 
   What does the forecast show?
   The date
-  The wave size
+  The wave Height
+  wave description
   Swell direction

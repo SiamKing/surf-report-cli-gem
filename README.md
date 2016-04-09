@@ -16,7 +16,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Want to hit the waves today, tomorrow or the next day?  Our own surfer dude will tell you whether to hit the waves or hit the snooze!
 
 ## Development
 
