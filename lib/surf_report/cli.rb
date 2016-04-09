@@ -9,7 +9,7 @@ class SurfReport::CLI
     make_days
     list_surf_reports
     menu
-    goodbye
+    later
   end
 
   def make_days
@@ -31,10 +31,10 @@ class SurfReport::CLI
     input = nil
     while input != "exit"
       puts "\n"
-      puts "What number would you like to see a detailed report for? Oh yeah...you can type 'list' to see days again or 'exit' to get outta here!"
+      puts "What number would you like to see a detailed report for? Oh yeah...you can type 'list' to see the days again or 'later' to get outta here!"
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i.between?(1, 3)
         the_day = @days[input.to_i - 1]
         puts "\n"
         puts "The date you chose is #{the_day.date}".colorize(:red)
@@ -45,17 +45,17 @@ class SurfReport::CLI
 
       elsif input == "list"
         list_surf_reports
-      elsif input == "exit"
+      elsif input == "later"
         break
       else
         puts "\n"
-        puts "Not sure what you're getting at man. Maybe you should slow down a little. Take a breath and type 'list', number or 'exit'."
+        puts "Not sure what you're getting at man. Maybe you should slow down a little. Take a deep breath."
       end
     end
 
   end
 
-  def goodbye
+  def later
     puts "Later brah! Hope the waves are swell;)"
   end
 end

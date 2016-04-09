@@ -14,7 +14,7 @@ class SurfReport::Report
     def surfer_dude_says
       if @wave_size == "1-3ft"
         self.surfer_dude_says = "Stay home and have a brewsky instead brah! Tomorrow will be a better day (if you're not too hungover)!"
-      elsif @wave_size == "2-3ft+"
+      elsif @wave_size == "2-3ft+" || @wave_size == "2-3ft"
         self.surfer_dude_says = "Might be a few good ones out there! Remember: The water is you and you are the water."
       else
         self.surfer_dude_says = "EPIC SWELL! Show Keanu how it's done in SoCal! GET OFF MY WAAAAAVE!!!"

@@ -1,12 +1,12 @@
 PATH
   remote: .
   specs:
-    surf_report (0.1.0)
+    surf-report-cli-gem (0.1.0)
       colorize
       nokogiri
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     coderay (1.1.1)
     colorize (0.7.7)
@@ -28,7 +28,7 @@ DEPENDENCIES
   bundler (~> 1.11)
   pry
   rake (~> 10.0)
-  surf_report!
+  surf-report-cli-gem!
 
 BUNDLED WITH
    1.11.2
