@@ -4,7 +4,7 @@ What's up brah!  This is a totally wicked program that will tell you which pipe 
 
 ## Installation
 
-You can install this gem via `gem install surf-report-cli-gem`. The `surf-report` CLI will be installed and you can run `surf-report` to get a list of the waves you can hit now right in your command line.
+You can install this gem via `gem install surf_report`. The `surf-report` CLI will be installed and you can run `surf-report` to get a list of the waves you can hit now right in your command line.
 
 And then execute:
 
