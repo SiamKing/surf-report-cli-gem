@@ -9,12 +9,13 @@ class Scraper
     days = doc.css("div.day-slider-container")
     report = {}
     surf_days = [days.children[1], days.children[3], days.children[5]]
+
     surf_days.each_with_index.map do |day, i|
       { :date => day.children.css("span")[0].text,
         :forecast => day.css("strong").text,
         :wave_size => day.css("h1").text,
         :wave_description => day.children.css("span")[2].text,
-        :swell_direction => day.children.css("span")[3].text}
+        :swell_direction => day.children.css("span")[3].text }
       end
       
     end

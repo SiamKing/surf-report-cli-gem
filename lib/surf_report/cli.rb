@@ -1,5 +1,7 @@
 require_relative "../surf_report/scraper.rb"
 require_relative "../surf_report/report.rb"
+require 'colorize'
+
 require 'pry'
 class SurfReport::CLI
 
@@ -12,15 +14,16 @@ class SurfReport::CLI
 
   def make_days
     days_array = Scraper.scrape_index_page
-    binding.pry
+    SurfReport::Report.create_from_collection(days_array)
   end
 
   def list_surf_reports
-    puts "3 Day Surf Report for Los Angeles:"
     puts "\n"
-    @days = SurfReport::Report.today
+    puts "3 Day Surf Report for Los Angeles:".colorize(:black)
+    puts "\n"
+    @days = SurfReport::Report.all
     @days.each.with_index(1) do |day, i|
-      puts "#{i}. #{day.date} - #{day.forecast}"
+      puts "#{i}.".colorize(:magenta) + "#{day.date}".colorize(:black) + "- #{day.forecast.colorize(:blue)}"
     end
   end
 
@@ -34,11 +37,11 @@ class SurfReport::CLI
       if input.to_i > 0
         the_day = @days[input.to_i - 1]
         puts "\n"
-        puts "Date: #{the_day.date}"
-        puts "Wave size: #{the_day.wave_size}"
-        puts "Wave description: #{wave_description}"
-        puts "Swell Direction: #{the_day.swell_direction}"
-        puts "Surfer Dude says: #{the_day.surfer_dude_says}"
+        puts "The date you chose is #{the_day.date}".colorize(:red)
+        puts "Wave Height : ".colorize(:cyan) + "#{the_day.wave_size.colorize(:black)}"
+        puts "Wave Description: ".colorize(:cyan) + "#{the_day.wave_description.colorize(:black)}"
+        puts "Swell Direction: ".colorize(:cyan) + "#{the_day.swell_direction.colorize(:black)}"
+        puts "Surfer Dude says: ".colorize(:cyan) + "#{the_day.surfer_dude_says.colorize(:black)}"
 
       elsif input == "list"
         list_surf_reports

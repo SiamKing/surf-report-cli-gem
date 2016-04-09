@@ -1,25 +1,30 @@
 class SurfReport::Report
   attr_accessor :name, :date, :forecast, :wave_size, :wave_description, :swell_direction, :surfer_dude_says, :url
-    @@all = []
-  def self.today
+  @@all = []
 
+    def initialize(report_hash)
+      report_hash.collect {|key, value| self.send(("#{key}="), value)}
+      @@all << self
+    end
 
-      def initialize(report_hash)
-        report_hash.collect {|key, value| self.send(("#{key}="), value)}
-        @@all << self
+    def self.create_from_collection(days_array)
+      days_array.each{|day| self.new(day)}
+    end
+
+    def surfer_dude_says
+      if @wave_size == "1-3ft"
+        self.surfer_dude_says = "Stay home and have a brewsky instead brah! Tomorrow will be a better day (if you're not too hungover)!"
+      elsif @wave_size == "2-3ft+"
+        self.surfer_dude_says = "Might be a few good ones out there! Remember: The water is you and you are the water."
+      else
+        self.surfer_dude_says = "EPIC SWELL! Show Keanu how it's done in SoCal! GET OFF MY WAAAAAVE!!!"
       end
+    end
 
-      def self.create_from_collection(students_array)
-        students_array.each{|student| Student.new(student)}
-      end
-
-      def add_student_attributes(attributes_hash)
-        attributes_hash.collect {|key, value| self.send(("#{key}="), value)}
-      end
-
-      def self.all
-        @@all
-      end
+    def self.all
+      @@all
+    end
+  end
   #   day_1 = self.new
   #   day_1.date = "4/7/2016"
   #   day_1.forecast = "poor"
@@ -49,4 +54,3 @@ class SurfReport::Report
   #
   #   [day_1, day_2, day_3]
   # end
-end
