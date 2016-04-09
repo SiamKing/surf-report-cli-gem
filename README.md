@@ -1,16 +1,10 @@
 # SurfReport
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/surf_report`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+What's up brah!  This is a totally wicked program that will tell you which pipe you should hit!
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'surf_report'
-```
+You can install this gem via `gem install surf-report-cli-gem`. The `surf-report` CLI will be installed and you can run `surf-report` to get a list of the waves you can hit now right in your command line.
 
 And then execute:
 
@@ -38,4 +32,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
