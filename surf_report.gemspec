@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Waves in Los Angeles}
   spec.description   = %q{Waves in Los Angeles}
-  spec.homepage      = "https://github.com/SiamKing/surf-report-cli-gem."
+  spec.homepage      = "https://github.com/SiamKing/surf-report-cli-gem"
   spec.license       = "MIT"
 
 
