@@ -23,7 +23,7 @@ class SurfReport::CLI
     puts "\n"
     @days = SurfReport::Report.all
     @days.each.with_index(1) do |day, i|
-      puts "#{i}.".colorize(:magenta) + "#{day.date}".colorize(:black) + "- #{day.forecast.colorize(:blue)}"
+      puts "#{i}.".colorize(:magenta) + "#{day.date}".colorize(:black) + " - #{day.forecast.colorize(:blue)}"
     end
   end
 
